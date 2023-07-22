@@ -1,0 +1,18 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Search Results
+{% endblock  %}
+
+{% block body %}
+    <h2>Search results for "{{q}}"</h2>
+
+    <ul>
+        {% for entry in entries %}
+            {% if q.lower in entry.lower or entry.lower in q.lower %}
+                <a href="/wiki/{{entry}}"><li>{{ entry }}</li></a>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock  %}

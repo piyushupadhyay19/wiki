@@ -1,0 +1,32 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Create New Page
+{% endblock  %}
+
+{% block body %}
+    <h6 style="color:red">{{message}}</h6>
+    <h1>Create New Page</h1>
+<form action="/">
+    {% csrf_token %}
+<div class="title">
+    <label for="title">
+        <h3>Title</h3>
+    </label>
+</div>
+<div class="title_ip">
+        <input id="title" type="text" name="title" placeholder="Enter a title" style="width: 80%; padding:5px;" required autofocus>
+</div>
+<div class="content">
+    <label for="content">
+        <h3>Content</h3>
+    </label>
+</div>
+<div class="content_ip">
+    <textarea id="content" name="content" rows="25" cols="25" placeholder="Enter markdown content" style="height:400px; padding:5px" required></textarea>
+</div>
+<div class="save">
+    <input type="submit" name="save" value="Save" class="btn btn-primary">
+</div>
+</form>
+{% endblock  %}
